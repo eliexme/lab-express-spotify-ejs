@@ -1,0 +1,12 @@
+<section class="grid">
+    <% artistArray.forEach(artist => { %>
+    <a href="/albums/<%- artist.id %>" class="container">
+        <% let url = "/images/spotify-background.jpeg" %>
+        <% if (artist.images[0]) { %>
+        <% url = artist.images[0].url %>
+        <% } %>
+        <img src=<%- url %> alt="artist picture"/>
+        <h1><%- artist.name %></h1>
+    </a>
+    <% }) %>
+</section>
