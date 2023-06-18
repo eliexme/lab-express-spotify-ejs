@@ -53,8 +53,11 @@ app.get('/albums/:artistId', async(req, res)=>{
   res.render('albumResult', {albumsArray})
 })
 
-app.get('/tracks/:albumId', (req, res)=>{
-  
+app.get('/tracks/:albumId', async(req, res)=>{
+  const {albumId} = req.params
+  const data = await spotifyApi.getAlbumTracks(albumId)
+  const tracksArray = data.body.items
+  res.render('tracksResult', {tracksArray})
 })
 
 

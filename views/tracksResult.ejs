@@ -1,0 +1,12 @@
+<section class="grid">
+    <% tracksArray.forEach(track => { %>
+        <div href="/tracks/<%- track.id %>" class="container">
+            <audio controls>
+                <source src=<%= track.preview_url %> type="audio/mpeg">
+              </audio>
+              <a href=<%= track.uri %>>Open in spotify</a>
+
+            <h1><%- track.name %></h1>
+        </div>
+    <% }) %>
+</section>
